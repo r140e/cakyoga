@@ -80,14 +80,14 @@
             </div>               
         </div>
         </section>
-        <section class="uk-section uk-background-secondary uk-light">
+        <section class="uk-section uk-background-secondary">
         <div class="uk-container">
-        <h2 id="c1" class="uk-text-center">Projects</h2>
+        <h2 class="uk-light uk-text-center">Projects</h2>
         <hr class="uk-divider-small uk-text-center"/>        
         <div class="uk-grid-large uk-margin uk-flex-center uk-flex-middle" uk-grid>            
             <div class="uk-width-expand@s" uk-grid>
                 <div class="uk-card uk-grid-collapse">
-                    <div class="uk-background-primary uk-card-body">
+                    <div class="uk-background-muted uk-card-body">
                         <div class="uk-card-badge uk-label">More</div>
                         <h3 class="uk-card-title">{{ $p1->name }}</h3>
                         <p>{{ $p1->description }}</p>
@@ -101,23 +101,23 @@
             <div class="uk-width-2-3@s" uk-grid>
                 <div class="uk-card uk-child-width-1-2@s uk-grid-collapse uk-margin" uk-grid>
                     <div class="uk-card-media-left uk-cover-container">
-                        <img src="/img/default-image-post.jpg" alt="" uk-cover>
+                        <img src="/img/default-image-post2.jpg" alt="" uk-cover>
                         <canvas width="600" height="400"></canvas>
                     </div>
-                    <div class="uk-background-primary uk-card-body">
+                    <div class="uk-background-muted uk-card-body">
                         <div class="uk-card-badge uk-label">More</div>
                         <h3 class="uk-card-title">{{ $p2->name }}</h3>
                         <p>{{ $p2->description }}</p>
                     </div>                 
                 </div>
                 <div class="uk-card uk-child-width-1-2@s uk-grid-collapse uk-margin" uk-grid>
-                    <div class="uk-background-primary uk-card-body uk-panel">
+                    <div class="uk-background-muted uk-card-body uk-panel">
                         <div class="uk-card-badge uk-label">More</div>
                         <h3 class="uk-card-title">{{ $p1->name }}</h3>
                         <p>{{ $p1->description }}</p>
                     </div>
                     <div class="uk-card-media-right uk-cover-container">
-                        <img src="/img/default-image-post.jpg" alt="" uk-cover>
+                        <img src="/img/default-image-post3.jpg" alt="" uk-cover>
                         <canvas width="600" height="400"></canvas>
                     </div>
                 </div>                         
@@ -129,78 +129,37 @@
                 <h2 id="c1" class="uk-text-center">Informasi</h2>
                 <hr class="uk-divider-small uk-text-center"/>
                 <div class="post-feed uk-child-width-1-3@m  uk-child-width-1-2@s uk-grid uk-grid-divider" uk-grid="masonry: true">
-                    @foreach($posts as $p)
+                    @foreach ($entries as $e)
                     <div>
                         <div class="uk-card uk-card-default">
                             <div class="uk-card-media-top">                                
-                                <img src="{{ $p->thumbnail }}" alt="">
+                                <img src="" alt="">
                             </div>
                             <div class="uk-card-body">
-                                <h3 class="uk-card-title"><a class="post-card" href={{ $p->guid }}>{{ $p->post_title }}</a></h3>
-                                <p>{{ $p->post_excerpt }}</p>
+                                <h3 class="uk-card-title"><a class="post-card" href="">{{ $e->get('title') }}</a></h3>
+                                <p>{{ $e->get('description') }}</p>                                                                                                    
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                    @endforeach                    
                 </div>
             </div>
         </section>
         <section class="uk-section uk-section-muted uk-dark">
-        <div class="uk-container uk-container-small">
-        <h2 class="uk-text-center">Agenda</h2>
+        <div class="uk-container">
+        <h2 class="uk-text-center">Galery</h2>
         <hr class="uk-divider-small uk-text-center"/>
-        <ul class="uk-subnav uk-subnav-pill uk-flex-center" uk-switcher="connect: .switcher-container;">
-                <li><a href="#">November</a></li>
-                <li><a href="#">Desember</a></li>
-                <li><a href="#">Januari</a></li>
-        </ul>
-        <ul class="uk-switcher switcher-container uk-margin">
-                <li><table class="uk-table uk-table-middle uk-table-divider">
-                        <thead>
-                            <tr>
-                                <th class="uk-width-small">Tanggal</th>
-                                <th>Kegiatan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1-16</td>
-                                <td>Sosialisasi dari BPJS Kabupaten</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </li>
-                <li><table class="uk-table uk-table-middle uk-table-divider">
-                        <thead class="uk-text-center">
-                            <tr>
-                                <th class="uk-width-small">Tanggal</th>
-                                <th>Kegiatan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>20-25</td>
-                                <td>Kerja bakti desa menyambut tahun baru</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </li>
-                <li><table class="uk-table uk-table-middle uk-table-divider">
-                        <thead>
-                            <tr>
-                                <th class="uk-width-small">Tanggal</th>
-                                <th>Kegiatan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>26</td>
-                                <td>Salaman</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </li>
-            </ul>
+        <div class="post-feed uk-child-width-1-3@m  uk-child-width-1-2@s uk-grid uk-grid-divider" uk-grid="masonry: true">
+        @foreach ($assets as $as)
+        <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-card-media-top" uk-lightbox="">
+                    <a href={{ $as->getFile()->getUrl() }}><img src={{ $as->getFile()->getUrl() }} alt=""></a>
+                </div>
+            </div>
+        </div>                        
+        @endforeach
+        </div>
         </div>
         </section>
         <section class='uk-section-small uk-background-primary uk-light'>
