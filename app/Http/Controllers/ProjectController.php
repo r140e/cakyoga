@@ -9,13 +9,39 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::orderBy('created_at', 'desc')
+        $projects = Project::where('is_completed', false)
+                            ->orderBy('created_at', 'desc')
                             ->withCount(['tasks' => function ($query) {
                               $query->where('is_completed', false);
                             }])
                             ->get();
 
         return $projects->toJson();
+    }
+
+    public function CompletedList()
+    {
+        $projects = Project::where('is_completed', true)
+                            ->orderBy('created_at', 'desc')
+                            ->withCount('tasks')
+                            ->get();
+
+        return $projects->toJson();
+    }
+
+    public function ShowCompleted($id)
+    {
+        $project = Project::with('tasks')->find($id);
+
+        return $project->toJson();
+    }
+
+    public function markAsUnCompleted(Project $project)
+    {
+        $project->is_completed = false;
+        $project->update();
+
+        return response()->json('Project updated!');
     }
 
     public function store(Request $request)

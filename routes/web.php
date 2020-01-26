@@ -26,4 +26,4 @@ Route::put('/quote/update/{id}', 'QuotesController@update');
 Route::get('/quote/delete/{id}', 'QuotesController@destroy');
 
 Route::view('/projects/{path?}', 'tasks')->middleware('auth');
-Route::view('/projects/completed/{path?}', 'tasks')->middleware('auth');
+Route::view('/completed/{path?}', 'tasks')->middleware('auth');

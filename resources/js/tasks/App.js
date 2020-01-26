@@ -5,6 +5,8 @@ import Header from './Header'
 import NewProject from './NewProject'
 import ProjectsList from './ProjectsList'
 import SingleProject from './SingleProject'
+import CompletedList from './CompletedList'
+import CompletedProject from './CompletedProject'
 
 class App extends Component {
   render () {
@@ -16,6 +18,8 @@ class App extends Component {
             <Route exact path='/projects' component={ProjectsList} />
             <Route path='/projects/create' component={NewProject} />
             <Route path='/projects/:id' component={SingleProject} />
+            <Route exact path='/completed' component={CompletedList} />
+            <Route path='/completed/:id' component={CompletedProject} />
           </Switch>
         </div>
       </BrowserRouter>

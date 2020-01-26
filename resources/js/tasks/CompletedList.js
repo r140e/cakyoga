@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-class ProjectsList extends Component {
+class CompletedList extends Component {
   constructor () {
     super()
 
@@ -12,7 +12,7 @@ class ProjectsList extends Component {
   }
 
   componentDidMount () {
-    axios.get('/api/projects').then(response => {
+    axios.get('/api/completed').then(response => {
       this.setState({
         projects: response.data
       })
@@ -30,23 +30,16 @@ class ProjectsList extends Component {
               <div className='card-header'>All projects</div>
 
               <div className='card-body'>
-                <Link className='btn btn-primary btn-sm mb-3' to='/projects/create'>
-                  Create new project
-                </Link>
-                <br/>
-                <Link className='btn btn-primary btn-sm mb-3' to='/completed'>
-                  Show Completed
-                </Link>
                 <ul className='list-group list-group-flush'>
                   {projects.map(project => (
                     <Link
                       className='list-group-item list-group-item-action d-flex justify-content-between align-items-center'
-                      to={`/projects/${project.id}`}
+                      to={`/completed/${project.id}`}
                       key={project.id}
                     >
                       {project.name}
                       <span className='badge badge-primary badge-pill'>
-                      {project.tasks_count}
+                        {project.tasks_count}
                       </span>
                     </Link>
                   ))}
@@ -60,4 +53,4 @@ class ProjectsList extends Component {
   }
 }
 
-export default ProjectsList
+export default CompletedList
