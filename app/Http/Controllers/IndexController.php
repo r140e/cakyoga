@@ -12,7 +12,7 @@ class IndexController extends Controller
 
     public function index(DeliveryClient $client)
     {
-        $p = \App\Project::where('is_completed', true)
+        $p = \App\Project::limit(3)
         ->orderBy('updated_at', 'desc');
         $quotes = \App\Quote::inRandomOrder()
             ->limit(1)
