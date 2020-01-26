@@ -9,7 +9,7 @@ class QuotesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => 'show']);
     }
     /**
      * Display a listing of the resource.
@@ -59,7 +59,9 @@ class QuotesController extends Controller
      */
     public function show(Quote $quote)
     {
-        //
+        $quotes = \App\Quote::inRandomOrder()
+            ->get();
+        return view('/quotes', ['quotes_tables' => $quotes]);
     }
 
     /**

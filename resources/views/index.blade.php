@@ -88,9 +88,9 @@
             <div class="uk-width-expand@s" uk-grid>
                 <div class="uk-card uk-grid-collapse">
                     <div class="uk-background-muted uk-card-body">
-                        <div class="uk-card-badge uk-label">More</div>
-                        <h3 class="uk-card-title">{{ $p1->name }}</h3>
-                        <p>{{ $p1->description }}</p>
+                        <div class="uk-card-badge uk-label">{{ $p->first()->place }}</div>
+                        <h3 class="uk-card-title">{{ $p->first()->name }}</h3>
+                        <p>{{ $p->first()->description }}</p>
                     </div>
                     <div class="uk-card-media-bottom uk-cover-container">
                         <img src="/img/default-image-post.jpg" alt="" uk-cover>
@@ -105,16 +105,16 @@
                         <canvas width="600" height="400"></canvas>
                     </div>
                     <div class="uk-background-muted uk-card-body">
-                        <div class="uk-card-badge uk-label">More</div>
-                        <h3 class="uk-card-title">{{ $p2->name }}</h3>
-                        <p>{{ $p2->description }}</p>
+                        <div class="uk-card-badge uk-label">{{ $p->skip(1)->first()->place }}</div>
+                        <h3 class="uk-card-title">{{ $p->skip(1)->first()->name }}</h3>
+                        <p>{{ $p->skip(1)->first()->description }}</p>
                     </div>                 
                 </div>
                 <div class="uk-card uk-child-width-1-2@s uk-grid-collapse uk-margin" uk-grid>
                     <div class="uk-background-muted uk-card-body uk-panel">
-                        <div class="uk-card-badge uk-label">More</div>
-                        <h3 class="uk-card-title">{{ $p1->name }}</h3>
-                        <p>{{ $p1->description }}</p>
+                        <div class="uk-card-badge uk-label">{{ $p->skip(2)->first()->place }}</div>
+                        <h3 class="uk-card-title">{{ $p->skip(2)->first()->name }}</h3>
+                        <p>{{ $p->skip(2)->first()->description }}</p>
                     </div>
                     <div class="uk-card-media-right uk-cover-container">
                         <img src="/img/default-image-post3.jpg" alt="" uk-cover>
@@ -132,12 +132,9 @@
                     @foreach ($entries as $e)
                     <div>
                         <div class="uk-card uk-card-default">
-                            <div class="uk-card-media-top">                                
-                                <img src="" alt="">
-                            </div>
                             <div class="uk-card-body">
                                 <h3 class="uk-card-title"><a class="post-card" href="https://cakyoga-blog.netlify.com/blog/{{ $e->get('slug') }}">{{ $e->get('title') }}</a></h3>
-                                <p>{{ $e->get('description') }}</p>                                                                                                    
+                                <p>{{ $e->get('description') }}</p>
                             </div>
                         </div>
                     </div>

@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Cakyoga') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('/css/uikit.min.css') }}" rel="stylesheet">
@@ -17,7 +17,7 @@
 <body>
 <nav class="uk-navbar uk-navbar-container uk-navbar-transparent uk-container uk-margin uk-light uk-position-top uk-position-z-index">
     <div class="uk-navbar-left">              
-        <a class="uk-navbar-item uk-logo" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
+        <a class="uk-navbar-item uk-logo" href="{{ url('/') }}">{{ config('app.name', 'Cakyoga') }}</a>
     </div>
     <div class="uk-navbar-right">
         <ul class="uk-navbar-nav uk-visible@s">
@@ -46,7 +46,5 @@
     </ul>
     </div>
 </div>
-    <!-- Scripts -->
-    <script src="{{ asset('/js/uikit-icons.js') }}" type="text/javascript" defer>></script>
 </body>
 </html>

@@ -13,11 +13,12 @@
 
 Route::get('/', 'IndexController@index');
 
-Auth::routes();
+Auth::routes(['reset' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/quotes', 'QuotesController@index');
+Route::get('/quotes', 'QuotesController@show');
+Route::get('/quotes/manage', 'QuotesController@index');
 Route::get('/quote/create', 'QuotesController@create');
 Route::post('/quote/store', 'QuotesController@store');
 Route::get('/quote/edit/{id}', 'QuotesController@edit');
@@ -25,3 +26,4 @@ Route::put('/quote/update/{id}', 'QuotesController@update');
 Route::get('/quote/delete/{id}', 'QuotesController@destroy');
 
 Route::view('/projects/{path?}', 'tasks')->middleware('auth');
+Route::view('/projects/completed/{path?}', 'tasks')->middleware('auth');

@@ -13,7 +13,7 @@
     </div>
     @endif
     <p>You are logged in!</p>
-    <a href="/usaha">Isi record</a>
+    <a href="/quotes/manage">Manage Quotes</a>
 </div>
 </div>
 </div>
