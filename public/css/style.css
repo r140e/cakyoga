@@ -6,9 +6,13 @@ height: 100vh;
 margin: 0; 
 padding: 0;
 }
-#map {
-height:88vh; 
+@media (max-width: 640px) {
+.navbar-primary {display: none!important;}
 }
+@media (min-width: 640px) {
+.uk-navbar-toggle {display: none!important;}
+}
+
 .bg-header {background: rgb(80,177,236); background: linear-gradient(135deg, rgba(80,177,236,1) 0%, rgba(18,56,127,1) 35%, rgba(94,47,119,1) 70%, rgba(99,21,71,1) 100%);}
 .bg-purple {background: #631547;}
 .a-video {filter: grayscale(1); transition: .5s ease-in}

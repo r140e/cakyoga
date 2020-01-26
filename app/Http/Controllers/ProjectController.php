@@ -56,4 +56,32 @@ class ProjectController extends Controller
 
         return response()->json('Project updated!');
     }
+
+    public function showEdit($id)
+    {
+        $project = Project::find($id);
+
+        return $project->toJson();
+    }
+
+    public function edit(Project $project, Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'place' => 'required',
+            'tool' => 'required',
+            'start' => 'required',
+            'end' => 'required',
+            'description' => 'required',
+        ]);
+        $project->name = $validatedData['name'];
+        $project->place = $validatedData['place'];
+        $project->tool = $validatedData['tool'];
+        $project->start = $validatedData['start'];
+        $project->end = $validatedData['end'];
+        $project->description = $validatedData['description'];
+        $project->update();
+
+        return response()->json('Project updated!');
+    }
 }

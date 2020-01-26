@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class SingleProject extends Component {
   constructor (props) {
@@ -109,8 +110,11 @@ class SingleProject extends Component {
               <div className='card-header'>{project.name}</div>
 
               <div className='card-body'>
-                <p>{project.description}</p>
-
+                <p>Tempat: {project.place}</p>
+                <p>Alat: {project.tool}</p>
+                <p>Mulai Pengerjaan: {project.start}</p>
+                <p>Deadline: {project.place}</p>
+                <p>Deskripsi: {project.description}</p>
                 <button
                   className='btn btn-primary btn-sm'
                   onClick={this.handleMarkProjectAsCompleted}

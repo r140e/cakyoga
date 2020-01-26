@@ -13,11 +13,11 @@
     <body>
             <nav class="uk-navbar-container uk-navbar-transparent uk-container uk-margin uk-light uk-position-top uk-position-z-index" uk-navbar="mode: click">
                     <div class="uk-navbar-left">              
-                        <a class="uk-navbar-item uk-logo" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
+                        <a class="uk-navbar-item uk-logo" href="{{ url('/') }}">{{ config('app.name', 'Cakyoga') }}</a>
                     </div>
                     <div class="uk-navbar-right">
-                        <ul class="uk-navbar-nav uk-visible@s">
-                        <li><a href="/blog">Blog</a></li>
+                        <ul class="uk-navbar-nav navbar-primary">
+                        <li><a href="https://cakyoga-blog.netlify.com/">Blog</a></li>
                         <li><a href="/projects">Projects</a></li>
                         <li><a href="/quotes">Quotes</a></li>                     
                         </ul>
@@ -42,7 +42,7 @@
                         </li>
                         @endguest                  
                         </ul>                    
-                        <a class="uk-navbar-toggle uk-hidden@s" href="#offcanvas-slide" uk-navbar-toggle-icon="" uk-toggle=""></a>                         
+                        <a class="uk-navbar-toggle" href="#offcanvas-slide" uk-navbar-toggle-icon="" uk-toggle=""></a>                         
                     </div>
                 </nav>
         <header class="uk-background-secondary uk-light uk-position-relative">
@@ -136,7 +136,7 @@
                                 <img src="" alt="">
                             </div>
                             <div class="uk-card-body">
-                                <h3 class="uk-card-title"><a class="post-card" href="">{{ $e->get('title') }}</a></h3>
+                                <h3 class="uk-card-title"><a class="post-card" href="https://cakyoga-blog.netlify.com/blog/{{ $e->get('slug') }}">{{ $e->get('title') }}</a></h3>
                                 <p>{{ $e->get('description') }}</p>                                                                                                    
                             </div>
                         </div>
@@ -186,7 +186,7 @@
         <div id="offcanvas-slide" uk-offcanvas="mode: reveal; overlay: true; flip: true;">
             <div class="uk-offcanvas-bar"><button class="uk-offcanvas-close" type="button" uk-close=""></button>
             <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">                
-                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://cakyoga-blog.netlify.com/">Blog</a></li>
                 <li><a href="/projects">Projects</a></li>
                 <li><a href="/quotes">Quotes</a></li>
             </ul>

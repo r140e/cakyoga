@@ -30,7 +30,8 @@ class IndexController extends Controller
         $this->client = $client;
         $query = (new \Contentful\Delivery\Query())
             ->setContentType('blogPost')
-            ->orderBy('fields.title')
+            ->orderBy('fields.title')            
+            ->setLimit(10)
             ->setLocale('*');
         $entries = $client->getEntries($query);
         
