@@ -71,7 +71,7 @@
                 <p>Yoga Arif Rohman, Asal Jember yang sedang melanjutkan studi S1 Teknik Geomatika di ITS, Pribadi yang ingin berguna bagi lingkungan sekitar</p>
             </div>
             <div class='uk-flex-last@s uk-card-media-left uk-cover-container uk-width-2-5@s'>
-                <div class="uk-background-cover uk-flex uk-flex-center uk-flex-middle" style="background-image: url('/img/thumbnail-video.png')"  uk-lightbox>
+                <div class="uk-background-cover uk-flex uk-flex-center uk-flex-middle" style="background-image: url('http://cakyoga.herokuapp.com/img/thumbnail-video.png')"  uk-lightbox>
                     <a href="https://www.youtube.com/watch?v=XRrl0-xv1Bo" class="uk-position-center uk-position-z-index" uk-icon="icon: play; ratio: 3;" data-caption="Trailer">
                     <div class="a-video"></div></a>
                     <canvas height='300' width='480'></canvas>
