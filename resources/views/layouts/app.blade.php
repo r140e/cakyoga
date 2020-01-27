@@ -21,7 +21,7 @@
         </div>
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav navbar-primary">
-                <li><a href="https://cakyoga-blog.netlify.com/">Blog</a></li>
+                <li><a href="https://cakyoga.netlify.com/">Blog</a></li>
                 <li><a href="/projects">Projects</a></li>
                 <li><a href="/quotes">Quotes</a></li>                     
             </ul>
@@ -61,7 +61,7 @@
     <div id="offcanvas-slide" uk-offcanvas="mode: reveal; overlay: true; flip: true;">
         <div class="uk-offcanvas-bar"><button class="uk-offcanvas-close" type="button" uk-close=""></button>
         <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">                
-            <li><a href="https://cakyoga-blog.netlify.com/">Blog</a></li>
+            <li><a href="https://cakyoga.netlify.com/">Blog</a></li>
             <li><a href="/projects">Projects</a></li>
             <li><a href="/quotes">Quotes</a></li>
         </ul>

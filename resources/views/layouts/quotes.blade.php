@@ -39,10 +39,10 @@
 
 <div id="offcanvas-slide" uk-offcanvas="mode: reveal; overlay: true; flip: true;">
     <div class="uk-offcanvas-bar"><button class="uk-offcanvas-close" type="button" uk-close=""></button>
-    <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+    <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">                
+        <li><a href="https://cakyoga.netlify.com/">Blog</a></li>
+        <li><a href="/projects">Projects</a></li>
         <li><a href="/quotes">Quotes</a></li>
-        <li><a href="/list-usaha">List Usaha</a></li>
-        <li><a href="/blog">Blog</a></li>
     </ul>
     </div>
 </div>

@@ -17,7 +17,7 @@
                     </div>
                     <div class="uk-navbar-right">
                         <ul class="uk-navbar-nav navbar-primary">
-                        <li><a href="https://cakyoga-blog.netlify.com/">Blog</a></li>
+                        <li><a href="https://cakyoga.netlify.com/">Blog</a></li>
                         <li><a href="/projects">Projects</a></li>
                         <li><a href="/quotes">Quotes</a></li>                     
                         </ul>
@@ -133,7 +133,7 @@
                     <div>
                         <div class="uk-card uk-card-default">
                             <div class="uk-card-body">
-                                <h3 class="uk-card-title"><a class="post-card" href="https://cakyoga-blog.netlify.com/blog/{{ $e->get('slug') }}">{{ $e->get('title') }}</a></h3>
+                                <h3 class="uk-card-title"><a class="post-card" href="https://cakyoga.netlify.com/blog/{{ $e->get('slug') }}">{{ $e->get('title') }}</a></h3>
                                 <p>{{ $e->get('description') }}</p>
                             </div>
                         </div>
@@ -183,7 +183,7 @@
         <div id="offcanvas-slide" uk-offcanvas="mode: reveal; overlay: true; flip: true;">
             <div class="uk-offcanvas-bar"><button class="uk-offcanvas-close" type="button" uk-close=""></button>
             <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">                
-                <li><a href="https://cakyoga-blog.netlify.com/">Blog</a></li>
+                <li><a href="https://cakyoga.netlify.com/">Blog</a></li>
                 <li><a href="/projects">Projects</a></li>
                 <li><a href="/quotes">Quotes</a></li>
             </ul>
