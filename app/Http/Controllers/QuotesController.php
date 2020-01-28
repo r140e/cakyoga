@@ -48,7 +48,7 @@ class QuotesController extends Controller
             'author' => $request->author,
             'quote' => $request->quote,
         ]);        
-    	return redirect('/quotes');
+    	return redirect('/quotes/manage');
     }
 
     /**
@@ -94,7 +94,7 @@ class QuotesController extends Controller
         $quote->author = $request->author;
         $quote->quote = $request->quote;
         $quote->save();
-        return redirect('/quotes');
+        return redirect('/quotes/manage');
     }
 
     /**
@@ -107,6 +107,6 @@ class QuotesController extends Controller
     {
         $quote = Quote::find($id);
         $quote->delete();
-        return redirect('/quotes');
+        return redirect('/quotes/manage');
     }
 }
