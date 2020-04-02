@@ -3,31 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
-use Contentful\Delivery\Client as DeliveryClient;
 
 class IndexController extends Controller
 {
-    private $client;
 
-    public function index(DeliveryClient $client)
+    public function index()
     {
         $p = \App\Project::limit(3)
         ->orderBy('updated_at', 'desc');
+        $data = [
+            'posts' => \Canvas\Post::published()->orderByDesc('published_at')->simplePaginate(12),
+        ];
         $quotes = \App\Quote::inRandomOrder()
             ->limit(1)
             ->get();
-        $this->client = $client;
-        $query = (new \Contentful\Delivery\Query())
-            ->setContentType('blogPost')
-            ->orderBy('fields.title')            
-            ->setLimit(10)
-            ->setLocale('*');
-        $entries = $client->getEntries($query);        
-        $assets = $client->getAssets();
-        if (!$entries || !$assets) {
-            abort(404);
-        }
-        return view('index', compact('p', 'quotes', 'entries', 'assets'));
+        return view('index', compact('p', 'data','quotes'));
     }
 }

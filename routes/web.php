@@ -27,3 +27,40 @@ Route::get('/quote/delete/{id}', 'QuotesController@destroy');
 
 Route::view('/projects/{path?}', 'tasks')->middleware('auth');
 Route::view('/completed/{path?}', 'tasks')->middleware('auth');
+
+// Get all published posts
+Route::get('blog', 'BlogController@getPosts');
+ 
+// Get posts for a given tag
+Route::get('tag/{slug}', 'BlogController@getPostsByTag');
+ 
+// Get posts for a given topic
+Route::get('topic/{slug}', 'BlogController@getPostsByTopic');
+ 
+// Find a single post
+Route::middleware('Canvas\Http\Middleware\Session')->get('{slug}', 'BlogController@findPostBySlug');
+
+Route::namespace('Studio')->prefix(config('studio.path'))->group(function () {
+    Route::prefix('api')->group(function () {
+        Route::prefix('posts')->group(function () {
+            Route::get('/', 'PostController@index');
+            Route::get('{identifier}/{slug}', 'PostController@show')->middleware('Canvas\Http\Middleware\Session');
+        });
+
+        Route::prefix('tags')->group(function () {
+            Route::get('/', 'TagController@index');
+            Route::get('{slug}', 'TagController@show');
+        });
+
+        Route::prefix('topics')->group(function () {
+            Route::get('/', 'TopicController@index');
+            Route::get('{slug}', 'TopicController@show');
+        });
+
+        Route::prefix('users')->group(function () {
+            Route::get('{identifier}', 'UserController@show');
+        });
+    });
+
+    Route::get('/{view?}', 'ViewController')->where('view', '(.*)')->name('studio');
+});
