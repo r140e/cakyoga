@@ -89,7 +89,7 @@
 		<div>
 			<div class="uk-card uk-card-default">
 				<div class="uk-card-media-top">
-					<img src="{!! $d['featured_image'] !!}" alt="{!! $d['featured_image_caption'] !!}">
+					<img src="{!! $d['featured_image'] !!}&fm=jpg&w=610&fit=max" alt="{!! $d['featured_image_caption'] !!}">
                     <div class="uk-card-badge uk-label">{!! $d['read_time'] !!}</div>
 				</div>
 				<div class="uk-card-body">
