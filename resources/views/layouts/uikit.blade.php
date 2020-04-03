@@ -13,7 +13,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.7/css/uikit.min.css">
 </head>
 <body>
-	<div class="gtco-loader"></div>
 	@include('layouts.partials.nav')
         @yield('content')
 	@include('layouts.partials.footer')
