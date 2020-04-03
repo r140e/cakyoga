@@ -11,6 +11,8 @@
     <title>{{ config('app.name', 'Cakyoga') }}</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.7/css/uikit.min.css">
+	<link href="{{ asset('/css/style.css') }}" rel="stylesheet">    
+
 </head>
 <body>
 	@include('layouts.partials.nav')
