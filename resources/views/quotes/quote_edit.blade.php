@@ -35,7 +35,7 @@
 
     <div class="uk-margin">
         <input type="submit" class="uk-button uk-button-primary" value="Save">
-        <a href="/quotes" class="uk-button uk-button-default">Back</a>
+        <a href="/quotes/manage" class="uk-button uk-button-default">Back</a>
     </div>
 
 </form>

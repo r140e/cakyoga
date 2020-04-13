@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'storage_disk' => env('CANVAS_STORAGE_DISK', 'local'),
+    'storage_disk' => env('CANVAS_STORAGE_DISK', 's3'),
 
     'storage_path' => env('CANVAS_STORAGE_PATH', 'public/canvas'),
 
