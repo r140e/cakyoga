@@ -1,4 +1,4 @@
-@extends('layouts.uikit')
+@extends('layouts.blog')
 
 @section('content')
 <section class="uk-section uk-section-muted uk-dark">

@@ -1,4 +1,4 @@
-@extends('layouts.uikit')
+@extends('layouts.blog')
 
 @section('content')
 	<header class="uk-section-large uk-light uk-background-cover uk-background-secondary uk-background-blend-multiply" style="background-image:url({{ url($data['post']['featured_image']) }});">
