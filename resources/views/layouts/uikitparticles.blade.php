@@ -14,7 +14,6 @@
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">    
 </head>
 <body>
-	<div class="gtco-loader"></div>
 	@include('layouts.partials.navparticles')
         @yield('content')
 	@include('layouts.partials.footer')

@@ -9,7 +9,7 @@ class BlogController extends Controller
     public function getPosts()
     {
         $data = [
-            'posts' => \Canvas\Post::published()->orderByDesc('published_at')->simplePaginate(18),
+            'posts' => \Canvas\Post::published()->orderByDesc('published_at')->paginate(12),
         ];
  
         return view('blog.index', compact('data'));
@@ -21,7 +21,7 @@ class BlogController extends Controller
             $data = [
                 'posts' => \Canvas\Post::whereHas('tags', function ($query) use ($slug) {
                     $query->where('slug', $slug);
-                })->published()->orderByDesc('published_at')->simplePaginate(18),
+                })->published()->orderByDesc('published_at')->paginate(12),
             ];
  
             return view('blog.index', compact('data'));
@@ -36,7 +36,7 @@ class BlogController extends Controller
             $data = [
                 'posts' => \Canvas\Post::whereHas('topic', function ($query) use ($slug) {
                     $query->where('slug', $slug);
-                })->published()->orderByDesc('published_at')->simplePaginate(18),
+                })->published()->orderByDesc('published_at')->paginate(12),
             ];
  
             return view('blog.index', compact('data'));
