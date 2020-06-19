@@ -4,9 +4,8 @@
     </div>
     <div class="uk-navbar-right">
         <ul class="uk-navbar-nav navbar-primary">
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/quotes">Quotes</a></li>                     
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/quotes">Quotes</a></li>
         </ul>
         <ul class="uk-navbar-nav">
             @guest
