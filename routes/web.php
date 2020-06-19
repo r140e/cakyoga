@@ -25,8 +25,11 @@ Route::get('/quote/edit/{id}', 'QuotesController@edit');
 Route::put('/quote/update/{id}', 'QuotesController@update');
 Route::get('/quote/delete/{id}', 'QuotesController@destroy');
 
-Route::view('/projects/{path?}', 'tasks')->middleware('auth');
-Route::view('/completed/{path?}', 'tasks')->middleware('auth');
+// Route::view('/projects/{path?}', 'tasks')->middleware('auth');
+// Route::view('/completed/{path?}', 'tasks')->middleware('auth');
+
+Route::get('/projects', 'ProjectsController@index');
+Route::get('/projects/{slug}', 'ProjectsController@show');
 
 // Get all published posts
 Route::get('blog', 'BlogController@getPosts');

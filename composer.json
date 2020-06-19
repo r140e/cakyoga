@@ -12,6 +12,7 @@
         "ext-intl": "*",
         "cnvs/canvas": "^5.3",
         "cnvs/studio": "^1.0",
+        "contentful/laravel": "^7.0",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",

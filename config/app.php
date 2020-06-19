@@ -171,6 +171,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\CanvasServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        /* Contentfull */
+        Contentful\Laravel\ContentfulServiceProvider::class,
 
     ],
 

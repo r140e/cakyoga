@@ -6,6 +6,7 @@
     <div class="uk-navbar-right">
         <ul class="uk-navbar-nav uk-visible@s">
             <li><a href="/blog">Blog</a></li>
+            <li><a href="/projects">Projects</a></li>
             <li><a href="/quotes">Quotes</a></li>
         </ul>
         <a class="uk-navbar-toggle uk-hidden@s" href="#offcanvas-slide" uk-navbar-toggle-icon="" uk-toggle=""></a>

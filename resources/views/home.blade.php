@@ -13,7 +13,7 @@
     </div>
     @endif
     <p>You are logged in!</p>
-    <p><a href="/quotes/manage">Manage Quotes</a> or <a href="/admin">Publish Content</a></p>
+    <p><a href="/quotes/manage">Manage Quotes</a>, <a href="/admin">Publish Content</a> or <a href="/projects">add projects</a></p>
 </div>
 </div>
 </div>

@@ -40,97 +40,24 @@
     <div class="uk-container">
     <h2 class="uk-light uk-text-center">Projects</h2>
     <hr class="uk-divider-small uk-text-center"/>
-    <div class="uk-grid-large uk-margin uk-flex-center uk-flex-middle" uk-grid>
-        @if ($p->count() >= 3)
-            <div class="uk-width-expand@s" uk-grid>
-                <div class="uk-card uk-grid-collapse">
-                    <div class="uk-background-muted uk-card-body">                        
-                        <h3 class="uk-card-title">{{ $p->first()->name }}</h3>
-                        <p>{{ $p->first()->description }}</p>
-                    </div>
-                    <div class="uk-card-media-bottom uk-cover-container">
-                        <img src="/img/default-image-post.jpg" alt="" uk-cover>
-                        <canvas width="600" height="400"></canvas>
-                        <span class="uk-card-badge uk-label">{{ $p->first()->place }}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="uk-width-2-3@s" uk-grid>
-                <div class="uk-card uk-child-width-1-2@s uk-grid-collapse uk-margin" uk-grid>
-                    <div class="uk-card-media-left uk-cover-container">
-                        <img src="/img/default-image-post2.jpg" alt="" uk-cover>
-                        <canvas width="600" height="400"></canvas>                        
-                        <span class="uk-card-badge uk-label">{{ $p->skip(1)->first()->place }}</span>
-                    </div>
-                    <div class="uk-background-muted uk-card-body">
-                        <h3 class="uk-card-title">{{ $p->skip(1)->first()->name }}</h3>
-                        <p>{{ $p->skip(1)->first()->description }}</p>
-                    </div>
-                </div>
-                <div class="uk-card uk-child-width-1-2@s uk-grid-collapse uk-margin" uk-grid>
-                    <div class="uk-background-muted uk-card-body uk-panel">
-                        <h3 class="uk-card-title">{{ $p->skip(2)->first()->name }}</h3>
-                        <p>{{ $p->skip(2)->first()->description }}</p>
-                    </div>
-                    <div class="uk-card-media-right uk-cover-container">
-                        <img src="/img/default-image-post3.jpg" alt="" uk-cover>
-                        <canvas width="600" height="400"></canvas>                        
-                        <span class="uk-card-badge uk-label">{{ $p->skip(2)->first()->place }}</span>
-                    </div>
-                </div>                         
-            </div>
-            @elseif ($p->count() == 2)
-            <div class="uk-card uk-child-width-1-2@s uk-grid-collapse uk-margin" uk-grid>
-                <div class="uk-card-media-left uk-cover-container">
-                    <img src="/img/default-image-post2.jpg" alt="" uk-cover>
-                    <canvas width="600" height="400"></canvas>                        
-                    <span class="uk-card-badge uk-label">{{ $p->first()->place }}</span>
-                </div>
-                <div class="uk-background-muted uk-card-body">
-                    <h3 class="uk-card-title">{{ $p->first()->name }}</h3>
-                    <p>{{ $p->first()->description }}</p>
-                </div>
-            </div>
-            <div class="uk-card uk-child-width-1-2@s uk-grid-collapse uk-margin" uk-grid>
-                <div class="uk-background-muted uk-card-body uk-panel">
-                    <h3 class="uk-card-title">{{ $p->skip(1)->first()->name }}</h3>
-                    <p>{{ $p->skip(1)->first()->description }}</p>
-                </div>
-                <div class="uk-card-media-right uk-cover-container">
-                    <img src="/img/default-image-post3.jpg" alt="" uk-cover>
-                    <canvas width="600" height="400"></canvas>                        
-                    <span class="uk-card-badge uk-label">{{ $p->skip(1)->first()->place }}</span>
-                </div>
-            </div>
-            @elseif ($p->count() == 1)
-            <div class="uk-card uk-child-width-1-2@s uk-grid-collapse uk-margin" uk-grid>
-                <div class="uk-background-muted uk-card-body uk-panel">
-                    <h3 class="uk-card-title">{{ $p->first()->name }}</h3>
-                    <p>{{ $p->first()->description }}</p>
-                </div>
-                <div class="uk-card-media-right uk-cover-container">
-                    <img src="/img/default-image-post3.jpg" alt="" uk-cover>
-                    <canvas width="600" height="400"></canvas>                        
-                    <span class="uk-card-badge uk-label">{{ $p->first()->place }}</span>
-                </div>
-            </div>
-        @endif
-    </div>
     
     <div uk-slider="center: true">
 
         <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
 
             <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
-                @foreach($projects as $p)
+                @if( count($entries) > 0 )
+			    @php $index = 0; @endphp
+			    @foreach($entries as $entries)
                 <li>
                     <div class="uk-card uk-card-primary uk-card-body">
-                        <div class="uk-card-badge uk-label">{{ $p->place }}</div>
-                        <h3 class="uk-card-title">{{ $p->name }}</h3>
-                        <p>{{ $p->description }}</p>
+                        <div class="uk-card-badge uk-label">{{ $entries->tempat }}</div>
+                        <a href="/projects/{{ $entries->slug }}"><h3 class="uk-card-title">{{ $entries->namaProject }}</h3></a>
+                        <p>{{ $entries->keteranganSingkat }}</p>
                     </div>
                 </li>
                 @endforeach
+                @endif
             </ul>
 
             <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
