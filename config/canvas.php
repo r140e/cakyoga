@@ -57,7 +57,7 @@ return [
 
     'storage_disk' => env('CANVAS_STORAGE_DISK', 's3'),
 
-    'storage_path' => env('CANVAS_STORAGE_PATH', 'public/canvas'),
+    'storage_path' => env('CANVAS_STORAGE_PATH', 'blog'),
 
     'upload_filesize' => env('CANVAS_UPLOAD_FILESIZE', 3145728),
 
